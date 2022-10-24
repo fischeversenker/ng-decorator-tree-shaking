@@ -7,7 +7,7 @@ function noop() {
 
 @noop()
 @Component({
-  selector: 'lib-my-library',
-  template: `my-library works!`,
+  selector: 'app-unused-component',
+  template: 'unused template'
 })
-export class MyLibraryComponent {}
+export class UnusedComponentComponent {}
