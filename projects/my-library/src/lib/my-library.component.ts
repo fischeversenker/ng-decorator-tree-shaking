@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
-// no op decorator factory
+// noop decorator factory
 /*@__PURE__*/
 function noopDecoratorFactory() {
   return /*@__PURE__*/ (target: any) => target;
 }
 
-// no op decorator function
+// noop decorator function
 /*@__PURE__*/
 function noopDecorator(target: any) {
   return target;
