@@ -12,6 +12,9 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "library-with-localize": [
+        "dist/library-with-localize"
+      ],
       "my-library": [
         "dist/my-library"
       ]

@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 
-/*@__PURE__*/
-function noop() {
-  return /*@__PURE__*/(target: any) => target;
-}
-
-@noop()
 @Component({
   selector: 'lib-my-library',
-  template: `my-library works!`,
+  template: `<div i18n>unused library template</div>`
 })
 export class MyLibraryComponent {}

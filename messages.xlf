@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3911275350455750472" datatype="html">
+        <source>unused library template</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">projects/my-library/src/lib/my-library.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8082913224203449600" datatype="html">
+        <source>my app</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8983868420979549426" datatype="html">
+        <source>unused template</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/unused-component.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

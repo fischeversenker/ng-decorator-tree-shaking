@@ -60,6 +60,12 @@
           },
           "defaultConfiguration": "production"
         },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-decorator-tree-shaking:build"
+          }
+        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
@@ -94,6 +100,37 @@
             }
           },
           "defaultConfiguration": "production"
+        }
+      }
+    },
+    "library-with-localize": {
+      "projectType": "library",
+      "root": "projects/library-with-localize",
+      "sourceRoot": "projects/library-with-localize/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/library-with-localize/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/library-with-localize/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/library-with-localize/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/library-with-localize/src/test.ts",
+            "tsConfig": "projects/library-with-localize/tsconfig.spec.json",
+            "karmaConfig": "projects/library-with-localize/karma.conf.js"
+          }
         }
       }
     }
