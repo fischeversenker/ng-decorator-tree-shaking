@@ -1,26 +1,27 @@
 # NgDecoratorTreeShaking
 
-Reproduction repository to showcase tree-shaking problems when using decorators.
+Reproduction repository to showcase problems with tree-shaking of i18n extractions.
 
 This repository contains:
 - a library at `/projects/my-library`. This library contains and exports a [single module/component](projects/my-library/src/lib/my-library.component.ts).
-- an application at `/src/...`.  It imports the library module in the `app.module.ts` but does not use the exported library component anywhere.
-- a `dist` folder (that is kept up-to-date with a `pre-commit` hook) for your convenience
+- a library at `/projects/library-with-localize`. This library contains and exports a [single module/component](projects/library-with-localize/src/lib/library-with-localize.component.ts).
+- an application at `/src/...`.  It imports the library modules in the `app.module.ts` **but does not use the exported library components anywhere**.
 
 ## Problem
 
-The [library component](projects/my-library/src/lib/my-library.component.ts) has a custom decorator. **Without** the decorator the component is tree-shaken. **With** the decorator the component is included in the apps production bundle.
+Unused translation strings are included in the apps extracted translations. It seems like only translations are included from files that don't explicitly import and use the `$localize` function.
 
-There is a similar unused component as part of the app code [here](src/app/unused-component.component.ts). That one is not included in the production bundle.
-
-## Quick start
+## Reproduction steps
 
 ```shell
 # install dependencies
 yarn install
 
-# build the app
-yarn ng build ng-decorator-tree-shaking
+# build the libraries
+yarn ng build my-library && yarn ng build library-with-localize
+
+# extract translations
+yarn ng extract-i18n
 ```
 
-Now inspect the generated [main bundle](dist/ng-decorator-tree-shaking/main.js) and look for the component selector `lib-my-library`. It's there. If you remove the decorator from the [library component](projects/my-library/src/lib/my-library.component.ts) and rebuild the app, the component is (correctly) not included in the main bundle.
+Now verify that the generated `messages.xlf` contains unused translations from only these components that don't explicitly import and use `$localize`.
