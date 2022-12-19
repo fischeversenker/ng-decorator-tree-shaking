@@ -24,4 +24,4 @@ yarn ng build my-library && yarn ng build library-with-localize
 yarn ng extract-i18n
 ```
 
-Now verify that the generated [`messages.xlf`](messages.xlf) contains unused translations from only these components that don't explicitly import and use `$localize`.
+Now confirm that the generated [`messages.xlf` file](messages.xlf) contains unused translations from only these components that don't explicitly import and use `$localize`.
